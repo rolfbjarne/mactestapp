@@ -14,6 +14,13 @@ namespace mactestapp {
 			base.ViewDidLoad ();
 
 			// Do any additional setup after loading the view.
+			var panel = new NSSavePanel ();
+			panel.DidChangeToDirectory += (o, args) => {
+				var url = args.NewDirectoryUrl;
+				Console.WriteLine (url.Path);
+			};
+
+			View.AddSubview (NSButton.CreateButton ("a", () => panel.RunModal ()));
 		}
 
 		public override NSObject RepresentedObject {
