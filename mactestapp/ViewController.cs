@@ -17,7 +17,7 @@ namespace mactestapp {
 			var panel = new NSSavePanel ();
 			panel.DidChangeToDirectory += (o, args) => {
 				var url = args.NewDirectoryUrl;
-				Console.WriteLine (url.Path);
+				Console.WriteLine (url?.Path);
 			};
 
 			View.AddSubview (NSButton.CreateButton ("a", () => panel.RunModal ()));
