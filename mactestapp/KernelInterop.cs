@@ -75,7 +75,10 @@ namespace MacPlatform {
 				size = sizeof (task_vm_info);
 			}
 
-			int ret = task_info (mach_task_self (), TASK_VM_INFO, ref vm_info, ref size);
+			var self = mach_task_self ();
+			Console.WriteLine ($"task_info ({self}, {TASK_VM_INFO}, {vm_info}, {size})");
+			int ret = task_info (self, TASK_VM_INFO, ref vm_info, ref size);
+			Console.WriteLine ($"task_info ({self}, {TASK_VM_INFO}, {vm_info}, {size}) => {ret}");
 			return ret == KERN_SUCCESS;
 		}
 
