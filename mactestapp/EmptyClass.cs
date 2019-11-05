@@ -22,6 +22,8 @@ namespace MacPlatform.Tests {
 					//if (!countsReached.TryGetValue (args.MemoryStatus, out int count))
 					//	count = 0;
 					//countsReached [args.MemoryStatus] = ++count;
+					KernelInterop.GetCompressedMemoryInfo (out var compressedBytes, out var virtualBytes);
+					Console.WriteLine ($"StatusChanged ({args}): compressed bytes: {compressedBytes} virtual bytes: {virtualBytes}");
 				};
 
 				await SimulateMemoryPressure ("warn");

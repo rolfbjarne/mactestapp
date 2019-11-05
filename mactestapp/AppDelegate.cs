@@ -4,6 +4,7 @@ using Foundation;
 
 using System;
 using System.Runtime.InteropServices;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace mactestapp {
@@ -29,6 +30,7 @@ namespace mactestapp {
 			Task.Run (async () => {
 				await new MacPlatform.Tests.MemoryMonitorTests ().TestMemoryMonitorWithSimulatedValues ();
 			});
+			SynchronizationContext.SetSynchronizationContext (new SynchronizationContext ());
 		}
 
 		public override void DidFinishLaunching (NSNotification notification)
