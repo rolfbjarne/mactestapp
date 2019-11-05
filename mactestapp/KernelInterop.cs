@@ -72,7 +72,7 @@ namespace MacPlatform {
 			vm_info = new task_vm_info ();
 			int size;
 			unsafe {
-				size = sizeof (task_vm_info);
+				size = sizeof (task_vm_info) / 4;
 			}
 
 			var self = mach_task_self ();
