@@ -32,7 +32,7 @@ namespace mactestapp {
 	}
 
 	class SavePanelDelegate : NSObject, INSOpenSavePanelDelegate {
-		[Export ("panel:directoryDidChange:")]
+		[Export ("panel:didChangeToDirectoryURL:")]
 		void DidChangeToDirectory (NSPanel sender, NSObject args)
 		{
 			Console.WriteLine ($"DidChangeDirectory ({sender}, {args} = {args?.GetType ()})");
