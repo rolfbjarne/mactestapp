@@ -9,11 +9,21 @@ namespace mactestapp {
 		{
 		}
 
+		NSSavePanel OnCreatePanel ()
+		{
+			var panel = NSOpenPanel.OpenPanel;
+			Console.WriteLine ("Panel: 0x{0} => {1}", panel.Handle.ToString ("x"), panel.Class.Name);
+			panel.CanChooseDirectories = false;
+			panel.CanChooseFiles = true;
+			return panel;
+		}
+
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
-
-			// Do any additional setup after loading the view.
+			for (int i = 0; i < 10; ++i)
+				using (var v = OnCreatePanel ())
+					v.RunModal ();
 		}
 
 		public override NSObject RepresentedObject {
