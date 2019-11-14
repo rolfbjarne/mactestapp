@@ -25,6 +25,8 @@ namespace mactestapp {
 				Console.WriteLine (Environment.StackTrace);
 			});
 
+			NSUserDefaults.StandardUserDefaults.SetBool (false, "NSUseRemoteSavePanel");
+
 			//for (int i = 0; i < 10; ++i)
 			using (var v = OnCreatePanel ())
 				v.RunModal ();
