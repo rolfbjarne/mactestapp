@@ -11,29 +11,23 @@ namespace mactestapp {
 
 		NSSavePanel OnCreatePanel ()
 		{
-			var panel = NSOpenPanel.OpenPanel;
+			var panel = NSSavePanel.SavePanel;
 			Console.WriteLine ("Panel: 0x{0} => {1}", panel.Handle.ToString ("x"), panel.Class.Name);
-			panel.CanChooseDirectories = false;
-			panel.CanChooseFiles = true;
 			return panel;
 		}
 
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
-			for (int i = 0; i < 10; ++i)
-				using (var v = OnCreatePanel ())
-					v.RunModal ();
-		}
 
-		public override NSObject RepresentedObject {
-			get {
-				return base.RepresentedObject;
-			}
-			set {
-				base.RepresentedObject = value;
-				// Update the view, if already loaded.
-			}
+			NSNotificationCenter.DefaultCenter.AddObserver (NSWindow.DidResizeNotification, notification => {
+				Console.WriteLine ("DidResizeNotification ({0})", notification.Object.GetType ());
+				Console.WriteLine (Environment.StackTrace);
+			});
+
+			//for (int i = 0; i < 10; ++i)
+			using (var v = OnCreatePanel ())
+				v.RunModal ();
 		}
 	}
 }
