@@ -5,7 +5,7 @@ namespace mactestapp {
 		static void Main (string [] args)
 		{
 			NSApplication.Init ();
-			NSApplication.Main (new string [] { "-NSUseRemoteSavePanel", "NO" });
+			NSApplication.Main (args);
 		}
 	}
 }
