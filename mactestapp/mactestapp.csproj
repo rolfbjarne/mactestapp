@@ -48,9 +48,10 @@
     <AOTMode>None</AOTMode>
     <CodeSigningKey>Developer ID Application: Rolf Kvinge (TGFVQHFHZF)</CodeSigningKey>
     <CodeSignProvision>macOS Test App</CodeSignProvision>
-    <UseHardenedRuntime>true</UseHardenedRuntime>
     <PackageSigningKey>3rd Party Mac Developer Installer</PackageSigningKey>
     <XamMacArch>x86_64</XamMacArch>
+    <UseHardenedRuntime>true</UseHardenedRuntime>
+    <CodeSignEntitlements>Entitlements.plist</CodeSignEntitlements>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
