@@ -5,7 +5,7 @@
 	<key>CFBundleName</key>
 	<string>mactestapp</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.rolfkvinge.macTestApp</string>
+	<string>com.rolfkvinge.macdistributiontest</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>

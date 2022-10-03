@@ -32,6 +32,7 @@
     <AOTMode>None</AOTMode>
     <XamMacArch>x86_64</XamMacArch>
     <PackageSigningKey>3rd Party Mac Developer Installer</PackageSigningKey>
+    <CodesignProvision></CodesignProvision>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <Optimize>true</Optimize>
@@ -40,15 +41,15 @@
     <WarningLevel>4</WarningLevel>
     <EnableCodeSigning>true</EnableCodeSigning>
     <CreatePackage>false</CreatePackage>
-    <EnablePackageSigning>false</EnablePackageSigning>
+    <EnablePackageSigning>true</EnablePackageSigning>
     <IncludeMonoRuntime>true</IncludeMonoRuntime>
     <UseSGen>true</UseSGen>
     <UseRefCounting>true</UseRefCounting>
     <LinkMode>None</LinkMode>
     <AOTMode>None</AOTMode>
-    <CodeSigningKey>Developer ID Application: Rolf Kvinge (TGFVQHFHZF)</CodeSigningKey>
-    <CodeSignProvision>macOS Test App</CodeSignProvision>
-    <PackageSigningKey>3rd Party Mac Developer Installer</PackageSigningKey>
+    <CodeSigningKey>Apple Distribution: Rolf Kvinge (TGFVQHFHZF)</CodeSigningKey>
+    <CodeSignProvision></CodeSignProvision>
+    <PackageSigningKey>3rd Party Mac Developer Installer: Rolf Kvinge (TGFVQHFHZF)</PackageSigningKey>
     <XamMacArch>x86_64</XamMacArch>
     <UseHardenedRuntime>true</UseHardenedRuntime>
     <CodeSignEntitlements>Entitlements.plist</CodeSignEntitlements>
