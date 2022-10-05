@@ -16,22 +16,46 @@ namespace mactestapp {
 		{
 			base.ViewDidLoad ();
 
-			// Insert code here to initialize your application
-			var allInterfaces = NetworkInterface.GetAllNetworkInterfaces ();
-			var sb = new StringBuilder ();
-			sb.AppendFormat ("Found {0} network interfaces\n", allInterfaces.Length);
-			foreach (var iface in allInterfaces)
-				sb.AppendFormat ("    {0}\n", iface.Name);
-			Console.WriteLine (sb);
+			//var text = new NSTextView(View.Bounds);
+			//text.Value = "Hello world";
+			//View.AddSubview(text);
 
-			var text = new NSTextView (View.Bounds);
-			text.Value = sb.ToString ();
-			View.AddSubview (text);
+			var view = new ClickView(View.Bounds);
+			//view.Value = "Hello Click World";
+			View.AddSubview(view);
+		}
+	}
 
-			new Thread (() => {
-				Thread.Sleep (5000);
-				Environment.Exit (40);
-			}).Start ();
+	public class ClickView : NSView
+	{
+		public ClickView (CoreGraphics.CGRect bounds)
+			: base (bounds)
+		{
+		}
+
+		public ClickView()
+		{
+		}
+
+
+		public override void MouseDown(NSEvent theEvent)
+		{
+			Console.WriteLine("Mouse down");
+		}
+
+		public override void MouseUp(NSEvent theEvent)
+		{
+			Console.WriteLine("Mouse up");
+		}
+
+		public override void RightMouseDown(NSEvent theEvent)
+		{
+			Console.WriteLine("Right down");
+		}
+
+		public override void RightMouseUp(NSEvent theEvent)
+		{
+			Console.WriteLine("Right up");
 		}
 	}
 }
